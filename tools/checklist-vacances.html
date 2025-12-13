@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checklist Vacances - Organise-Moi</title>
+    <meta name="description" content="Préparez vos vacances sans rien oublier avec notre checklist complète. Suivez votre progression et partez l'esprit tranquille.">
+    <link rel="icon" type="image/svg+xml" href="../img/favicon.svg">
+    <link rel="icon" type="image/png" sizes="96x96" href="../img/favicon-96x96.png">
+    <link rel="icon" type="image/x-icon" href="../img/favicon.ico">
+    <link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
+    <link rel="manifest" href="../site.webmanifest">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/checklist.css">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <a href="../index.html" class="logo-container">
+                <img src="../img/favicon.svg" alt="Organise-Moi" class="logo-icon" width="24" height="24">
+                <span class="logo">Organise-Moi</span>
+            </a>
+            <a href="../index.html" class="back-link">← Retour à l'accueil</a>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="page-title">
+            <h1 data-aos="fade-up">Checklist Vacances</h1>
+            <p class="page-subtitle" data-aos="fade-up" data-aos-delay="100">Organisez chaque étape sereinement</p>
+        </div>
+
+        <div class="card">
+            <p>
+                Cette checklist de voyage vous aide à suivre toutes les étapes
+                importantes. Cochez les éléments réalisés et ajoutez vos propres tâches
+                selon votre situation.
+            </p>
+
+            <!-- Progression -->
+            <div class="progress-bar">
+                <div class="progress-label">
+                    Progression : <span id="progressText">0%</span>
+                </div>
+                <div class="progress-bar-bg">
+                    <div class="progress-bar-fill" id="progressFill"></div>
+                </div>
+            </div>
+
+            <!-- Ajout tâche personnalisée -->
+            <div class="add-task">
+                <input type="text" id="newTaskInput" placeholder="Ajouter une tâche personnelle…" />
+                <button class="button" id="addTaskButton">Ajouter</button>
+            </div>
+
+            <!-- Liste -->
+            <div class="checklist-items" id="checklistItems"></div>
+
+            <!-- Actions -->
+            <div class="actions">
+                <button class="button button-danger" id="resetButton">
+                    Réinitialiser la checklist
+                </button>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <a href="#privacy">Politique de confidentialité</a>
+            <a href="#terms">Conditions d'utilisation</a>
+        </div>
+        <p class="copyright">© 2025 Organise-Moi. Tous droits réservés.</p>
+    </footer>
+
+    <script src="../js/footer-year.js"></script>
+    <script>
+        const checklistType = 'vacances';
+
+        const checklistItems = [
+            "Vérifier les dates et la destination",
+            "Vérifier les papiers d'identité",
+            "Réserver transport et hébergement",
+            "Prévoir les congés",
+            "Carte d'identité ou passeport",
+            "Billets et réservations",
+            "Carte bancaire et espèces",
+            "Assurance voyage",
+            "Valise ou sac",
+            "Vêtements adaptés",
+            "Chaussures adaptées",
+            "Pyjama",
+            "Trousse de toilette",
+            "Crème solaire",
+            "Médicaments",
+            "Téléphone",
+            "Chargeurs",
+            "Batterie externe",
+            "Écouteurs",
+            "Doudou ou jeux pour enfants",
+            "Vider les poubelles",
+            "Fermer portes et fenêtres"
+        ];
+    </script>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src="../js/checklist.js"></script>
+    <script>
+        if (window.innerWidth >= 768) {
+            AOS.init({
+                duration: 800,
+                easing: 'ease-in-out',
+                once: true,
+                offset: 50
+            });
+        } else {
+            AOS.init({
+                disable: true
+            });
+        }
+    </script>
+</body>
+</html>
+

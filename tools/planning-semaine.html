@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Planning de la semaine – Organise-Moi</title>
+    <meta name="description"
+        content="Planning hebdomadaire simple et efficace. Organisez votre semaine jour par jour, sans inscription.">
+
+    <!-- Favicons -->
+    <link rel="icon" type="image/svg+xml" href="../img/favicon.svg">
+    <link rel="icon" type="image/png" sizes="96x96" href="../img/favicon-96x96.png">
+    <link rel="icon" type="image/x-icon" href="../img/favicon.ico">
+    <link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
+    <link rel="manifest" href="../site.webmanifest">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/planning.css">
+</head>
+
+<body class="planning-page">
+
+    <header>
+        <div class="header-content">
+            <a href="../index.html" class="logo-container">
+                <img src="../img/favicon.svg" alt="Organise-Moi" class="logo-icon" width="24" height="24">
+                <span class="logo">Organise-Moi</span>
+            </a>
+            <a href="../index.html" class="back-link">← Retour à l'accueil</a>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="page-title">
+            <h1 data-aos="fade-up">Planning Semaine</h1>
+            <p class="page-subtitle" id="dateRange" data-aos="fade-up" data-aos-delay="100">Chargement...</p>
+        </div>
+
+        <div class="card">
+            <div class="planning-header">
+                <div class="week-navigation">
+                    <button class="nav-btn" id="prevWeek">← Semaine précédente</button>
+                    <button class="nav-btn" id="nextWeek">Semaine suivante →</button>
+                </div>
+                <div class="header-actions">
+                    <button class="button-icon" id="printBtn" title="Imprimer">
+                        🖨️ Imprimer
+                    </button>
+                    <button class="button-icon button-danger" id="clearBtn" title="Tout effacer">
+                        🗑️ Tout effacer
+                    </button>
+                </div>
+            </div>
+
+            <!-- PLANNING -->
+            <div class="calendar-wrapper">
+                <div class="calendar-grid" id="calendarGrid">
+                    <!-- Colonnes générées en JS -->
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <a href="#privacy">Politique de confidentialité</a>
+            <a href="#terms">Conditions d'utilisation</a>
+        </div>
+        <p class="copyright">© 2025 Organise-Moi. Tous droits réservés.</p>
+    </footer>
+
+    <!-- JS -->
+    <script src="../js/footer-year.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src="../js/planning.js"></script>
+    <script>
+        if (window.innerWidth >= 768) {
+            AOS.init({
+                duration: 800,
+                easing: 'ease-in-out',
+                once: true,
+                offset: 50
+            });
+        } else {
+            AOS.init({
+                disable: true
+            });
+        }
+    </script>
+
+</body>
+
+</html>

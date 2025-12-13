@@ -1,0 +1,299 @@
+/* ============================================
+   TO-DO LIST - Organise-Moi
+   ============================================ */
+
+.todo-container {
+  padding: 0;
+}
+
+.input-group {
+  display: flex;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.input-group input {
+  flex: 1;
+}
+
+.input-group button {
+  white-space: nowrap;
+}
+
+/* ============================================
+   COMPTEUR DE TÂCHES
+   ============================================ */
+
+.tasks-counter {
+  color: #64748b;
+  font-size: 0.875rem;
+  font-weight: 500;
+  margin-bottom: 1rem;
+  padding: 0.5rem 0;
+  text-align: center;
+}
+
+/* ============================================
+   LISTE DE TÂCHES
+   ============================================ */
+
+.tasks-container {
+  margin-bottom: 1.5rem;
+}
+
+#tasksList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.task-item {
+  display: flex;
+  align-items: center;
+  padding: 0.75rem;
+  margin-bottom: 0.5rem;
+  background-color: transparent;
+  border-radius: 0;
+  gap: 0.5rem;
+  border-bottom: 1px solid #e5e7eb;
+  transition: background-color 0.2s;
+}
+
+.task-item:last-child {
+  border-bottom: none;
+}
+
+.task-item:hover {
+  background-color: #f9fafb;
+}
+
+.task-item.completed {
+  opacity: 0.6;
+}
+
+.task-item.completed .task-text {
+  text-decoration: line-through;
+  color: #94a3b8;
+}
+
+/* Tâche importante */
+.task-item.important {
+  border-left: 3px solid #f59e0b;
+  padding-left: calc(0.75rem - 3px);
+}
+
+.task-item.important .task-text {
+  font-weight: 500;
+}
+
+.task-checkbox {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+/* Bouton importance (⭐) */
+.task-important {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.125rem;
+  padding: 0;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  opacity: 0.4;
+  transition: opacity 0.2s, transform 0.2s;
+  color: #f59e0b;
+}
+
+.task-item:hover .task-important {
+  opacity: 0.7;
+}
+
+.task-important:hover {
+  opacity: 1;
+  transform: scale(1.1);
+}
+
+.task-item.important .task-important {
+  opacity: 1;
+}
+
+.task-text {
+  flex: 1;
+  color: #1f2937;
+  word-break: break-word;
+}
+
+/* Bouton supprimer */
+.task-delete {
+  display: none;
+  background: none;
+  border: none;
+  color: #dc2626;
+  cursor: pointer;
+  font-size: 1.25rem;
+  padding: 0;
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+  opacity: 0.5;
+  transition: opacity 0.2s;
+}
+
+/* Desktop : afficher au hover */
+.task-item:hover .task-delete {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.task-delete:hover {
+  opacity: 1;
+}
+
+/* Mobile : toujours visible */
+@media (max-width: 768px) {
+  .task-delete {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0.6;
+  }
+  
+  .task-delete:active {
+    opacity: 1;
+  }
+}
+
+/* ============================================
+   FOOTER ACTIONS
+   ============================================ */
+
+.footer-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid #e5e7eb;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.filters {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.filter-btn {
+  padding: 0.5rem 1rem;
+  border: none;
+  background: none;
+  color: #64748b;
+  cursor: pointer;
+  font-size: 0.875rem;
+  border-radius: 4px;
+  transition: all 0.2s;
+}
+
+.filter-btn:hover {
+  background-color: #f3f4f6;
+}
+
+.filter-btn.active {
+  background-color: #2563eb;
+  color: #ffffff;
+}
+
+.action-buttons {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.button-clear {
+  padding: 0.5rem 1rem;
+  border: none;
+  background: none;
+  color: #64748b;
+  cursor: pointer;
+  font-size: 0.875rem;
+  border-radius: 4px;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+
+.button-clear:hover {
+  background-color: #f3f4f6;
+  color: #1f2937;
+}
+
+/* ============================================
+   EMPTY STATE
+   ============================================ */
+
+.empty-state {
+  text-align: center;
+  padding: 3rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.empty-icon {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background-color: #e5e7eb;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.empty-title {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #374151;
+  margin: 0 0 0.5rem 0;
+}
+
+.empty-message {
+  font-size: 0.875rem;
+  color: #9ca3af;
+  margin: 0;
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+
+@media (max-width: 768px) {
+  .footer-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .filters {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .action-buttons {
+    width: 100%;
+    flex-direction: column;
+  }
+
+  .button-clear {
+    width: 100%;
+  }
+}

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-do List - Organise-Moi</title>
+    <meta name="description" content="Gérez vos tâches quotidiennes avec notre to-do list simple et efficace. Ajoutez, cochez et supprimez vos tâches facilement.">
+    <link rel="icon" type="image/svg+xml" href="../img/favicon.svg">
+    <link rel="icon" type="image/png" sizes="96x96" href="../img/favicon-96x96.png">
+    <link rel="icon" type="image/x-icon" href="../img/favicon.ico">
+    <link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
+    <link rel="manifest" href="../site.webmanifest">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/todo.css">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <a href="../index.html" class="logo-container">
+                <img src="../img/favicon.svg" alt="Organise-Moi" class="logo-icon" width="24" height="24">
+                <span class="logo">Organise-Moi</span>
+            </a>
+            <a href="../index.html" class="back-link">← Retour à l'accueil</a>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="page-title">
+            <h1 data-aos="fade-up">To-do List</h1>
+            <p class="page-subtitle" data-aos="fade-up" data-aos-delay="100">Organise-Moi</p>
+        </div>
+
+        <div class="card">
+            <div class="todo-container">
+                <div class="input-group">
+                    <input type="text" id="taskInput" placeholder="Qu'est-ce qui doit être fait ?" />
+                    <button class="button" id="addButton">Ajouter</button>
+                </div>
+
+                <!-- Compteur de tâches -->
+                <div class="tasks-counter" id="tasksCounter">0 tâches actives / 0 au total</div>
+
+                <div class="tasks-container">
+                    <ul id="tasksList"></ul>
+                    <div id="emptyState" class="empty-state" style="display: none;">
+                        <div class="empty-icon">✓</div>
+                        <p class="empty-title">Tout est fait !</p>
+                        <p class="empty-message">Ajoutez une nouvelle tâche pour commencer.</p>
+                    </div>
+                </div>
+
+                <div class="footer-actions">
+                    <div class="filters">
+                        <button class="filter-btn active" data-filter="all">Tous</button>
+                        <button class="filter-btn" data-filter="active">Actives</button>
+                        <button class="filter-btn" data-filter="completed">Terminées</button>
+                    </div>
+                    <div class="action-buttons">
+                        <button class="button-clear" id="uncheckAllButton">Tout décocher</button>
+                        <button class="button-clear" id="clearCompletedButton">Effacer les terminées</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <a href="#privacy">Politique de confidentialité</a>
+            <a href="#terms">Conditions d'utilisation</a>
+        </div>
+        <p class="copyright">© 2025 Organise-Moi. Tous droits réservés.</p>
+    </footer>
+
+    <script src="../js/footer-year.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src="../js/todo.js"></script>
+    <script>
+        if (window.innerWidth >= 768) {
+            AOS.init({
+                duration: 800,
+                easing: 'ease-in-out',
+                once: true,
+                offset: 50
+            });
+        } else {
+            AOS.init({
+                disable: true
+            });
+        }
+    </script>
+</body>
+</html>

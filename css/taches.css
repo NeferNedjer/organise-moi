@@ -1,0 +1,370 @@
+/* Augmenter la largeur du container pour cette page spécifique */
+main.container {
+  max-width: 1000px;
+}
+
+.taches-container {
+  padding: 0;
+  width: 100%;
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+
+/* S'assurer que tous les éléments restent dans la carte */
+.card {
+  overflow: hidden;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.input-group input {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.input-group select {
+  width: 100%;
+  padding: 0.75rem;
+  border-radius: 8px;
+  border: 1px solid #cbd5e1;
+  background-color: #ffffff;
+  color: #1f2937;
+  font-size: 1rem;
+  font-family: inherit;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+
+.input-group select:focus {
+  outline: none;
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+.frequency-select {
+  font-size: 0.875rem;
+}
+
+.select-wrapper {
+  width: 100%;
+  position: relative;
+  box-sizing: border-box;
+}
+
+.input-group button {
+  align-self: flex-start;
+  width: auto;
+  min-width: 120px;
+  box-sizing: border-box;
+}
+
+.taches-list {
+  margin-bottom: 1.5rem;
+}
+
+#tachesList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.tache-item {
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  margin-bottom: 0.75rem;
+  background-color: transparent;
+  border-radius: 0;
+  gap: 0.75rem;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.tache-item:last-child {
+  border-bottom: none;
+}
+
+.tache-item.completed {
+  opacity: 0.6;
+}
+
+.tache-item.completed .tache-content {
+  opacity: 0.7;
+}
+
+.tache-checkbox {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.tache-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.tache-text {
+  color: #1f2937;
+  font-weight: 500;
+  word-break: break-word;
+}
+
+.tache-meta {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.tache-person {
+  color: #64748b;
+  font-size: 0.875rem;
+}
+
+.tache-frequency {
+  color: #94a3b8;
+  font-size: 0.75rem;
+  padding: 0.125rem 0.5rem;
+  background-color: #f1f5f9;
+  border-radius: 12px;
+  font-weight: 500;
+}
+
+.tache-item.completed .tache-text {
+  text-decoration: line-through;
+  color: #94a3b8;
+}
+
+.tache-delete {
+  display: none;
+}
+
+.tache-item:hover .tache-delete {
+  display: block;
+  background: none;
+  border: none;
+  color: #dc2626;
+  cursor: pointer;
+  font-size: 1.25rem;
+  padding: 0;
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+  opacity: 0.5;
+}
+
+.tache-item:hover .tache-delete:hover {
+  opacity: 1;
+}
+
+.footer-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 1.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid #e5e7eb;
+}
+
+.filters {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.filters-secondary {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.person-filter {
+  padding: 0.5rem 1rem;
+  border: 1px solid #cbd5e1;
+  border-radius: 4px;
+  background-color: #ffffff;
+  color: #1f2937;
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.person-filter:hover {
+  border-color: #2563eb;
+}
+
+.person-filter:focus {
+  outline: none;
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+.footer-buttons {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.filter-btn {
+  padding: 0.5rem 1rem;
+  border: none;
+  background: none;
+  color: #64748b;
+  cursor: pointer;
+  font-size: 0.875rem;
+  border-radius: 4px;
+  transition: all 0.2s;
+}
+
+.filter-btn:hover {
+  background-color: #f3f4f6;
+}
+
+.filter-btn.active {
+  background-color: #2563eb;
+  color: #ffffff;
+}
+
+.button-clear {
+  padding: 0.5rem 1rem;
+  border: none;
+  background: none;
+  color: #64748b;
+  cursor: pointer;
+  font-size: 0.875rem;
+  border-radius: 4px;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+
+.button-clear:hover {
+  background-color: #f3f4f6;
+  color: #1f2937;
+}
+
+.empty-state {
+  text-align: center;
+  padding: 3rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.empty-icon {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background-color: #e5e7eb;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.empty-title {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #374151;
+  margin: 0 0 0.5rem 0;
+}
+
+.empty-message {
+  font-size: 0.875rem;
+  color: #9ca3af;
+  margin: 0;
+}
+
+@media (min-width: 768px) {
+  .input-group {
+    flex-direction: row;
+    align-items: flex-end;
+    flex-wrap: nowrap;
+  }
+  
+  .input-group input {
+    flex: 1 1 auto;
+    min-width: 0;
+  }
+  
+  .input-group select {
+    flex: 0 0 auto;
+    min-width: 140px;
+    max-width: 180px;
+  }
+  
+  .frequency-select {
+    min-width: 130px;
+    max-width: 160px;
+  }
+  
+  .input-group button {
+    align-self: auto;
+    flex: 0 0 auto;
+    white-space: nowrap;
+  }
+  
+  .footer-actions {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  
+  .footer-buttons {
+    flex-direction: row;
+  }
+}
+
+@media (max-width: 767px) {
+  .tache-meta {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+  
+  .footer-actions {
+    gap: 1rem;
+  }
+  
+  .footer-buttons {
+    flex-direction: column;
+    width: 100%;
+  }
+  
+  .button-clear {
+    width: 100%;
+    text-align: center;
+  }
+  
+  .input-group button {
+    width: 100%;
+    align-self: stretch;
+  }
+  
+  .person-filter {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .input-group {
+    gap: 0.5rem;
+  }
+  
+  .input-group input,
+  .input-group select {
+    font-size: 0.9375rem;
+  }
+}

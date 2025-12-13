@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Organise-Moi - Vos outils d'organisation au quotidien</title>
+    <meta name="description" content="Organisez votre quotidien avec nos outils pratiques : to-do list, planning de la semaine, liste de courses, tâches ménagères et checklists.">
+    <link rel="icon" type="image/svg+xml" href="img/favicon.svg">
+    <link rel="icon" type="image/png" sizes="96x96" href="img/favicon-96x96.png">
+    <link rel="icon" type="image/x-icon" href="img/favicon.ico">
+    <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+    <link rel="manifest" href="site.webmanifest">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <div class="logo-container">
+                <img src="img/favicon.svg" alt="Organise-Moi" class="logo-icon" width="24" height="24">
+                <h1 class="logo">Organise-Moi</h1>
+            </div>
+            <a href="a-propos.html" class="nav-link">À propos</a>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <h2 class="hero-title" data-aos="fade-up">Des outils simples pour une vie mieux organisée</h2>
+            <p class="hero-subtitle" data-aos="fade-up" data-aos-delay="100">Aucune inscription requise. Choisissez un outil et commencez instantanément.</p>
+        </section>
+
+        <section class="tools-section">
+            <div class="container">
+                <h3 class="section-title">Vos Outils</h3>
+                <div class="tools-grid">
+                    <div class="tool-card">
+                        <div class="tool-icon">📅</div>
+                        <h4 class="tool-title">Planning Semaine</h4>
+                        <p class="tool-description">Organisez votre semaine jour par jour.</p>
+                        <a href="tools/planning-semaine.html" class="tool-button">Planifier</a>
+                    </div>
+                    
+                    <div class="tool-card">
+                        <div class="tool-icon">🛒</div>
+                        <h4 class="tool-title">Liste de Courses</h4>
+                        <p class="tool-description">Créez et gérez vos listes de courses facilement.</p>
+                        <a href="tools/liste-courses.html" class="tool-button">Créer une liste</a>
+                    </div>
+                    
+                    <div class="tool-card">
+                        <div class="tool-icon">✓</div>
+                        <h4 class="tool-title">To-do List</h4>
+                        <p class="tool-description">Suivez vos tâches quotidiennes et priorités.</p>
+                        <a href="tools/todo.html" class="tool-button">Commencer</a>
+                    </div>
+                    
+                    <div class="tool-card">
+                        <div class="tool-icon">🧹</div>
+                        <h4 class="tool-title">Tâches Ménagères</h4>
+                        <p class="tool-description">Organisez et répartissez les tâches ménagères entre les membres.</p>
+                        <a href="tools/taches-menageres.html" class="tool-button">Gérer les tâches</a>
+                    </div>
+                    
+                    <div class="tool-card">
+                        <div class="tool-icon">🎓</div>
+                        <h4 class="tool-title">Checklist Rentrée</h4>
+                        <p class="tool-description">Préparez la rentrée scolaire avec notre checklist complète.</p>
+                        <a href="tools/checklist-rentree.html" class="tool-button">Se préparer</a>
+                    </div>
+                    
+                    <div class="tool-card">
+                        <div class="tool-icon">📦</div>
+                        <h4 class="tool-title">Checklist Déménagement</h4>
+                        <p class="tool-description">Organisez votre déménagement étape par étape sans rien oublier.</p>
+                        <a href="tools/checklist-demenagement.html" class="tool-button">Planifier</a>
+                    </div>
+                    
+                    <div class="tool-card">
+                        <div class="tool-icon">✈️</div>
+                        <h4 class="tool-title">Checklist Vacances</h4>
+                        <p class="tool-description">Préparez vos vacances sans rien oublier.</p>
+                        <a href="tools/checklist-vacances.html" class="tool-button">Préparer</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <a href="#privacy">Politique de confidentialité</a>
+            <a href="#terms">Conditions d'utilisation</a>
+        </div>
+        <p class="copyright">© 2025 Organise-Moi. Tous droits réservés.</p>
+    </footer>
+
+    <script src="js/footer-year.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        if (window.innerWidth >= 768) {
+            AOS.init({
+                duration: 800,
+                easing: 'ease-in-out',
+                once: true,
+                offset: 100
+            });
+        } else {
+            AOS.init({
+                disable: true
+            });
+        }
+    </script>
+</body>
+</html>
+

@@ -1,0 +1,102 @@
+.checklist-container {
+  padding: 0;
+}
+
+.progress-bar {
+  margin-bottom: 2rem;
+}
+
+.progress-label {
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  color: #1f2937;
+}
+
+.progress-bar-bg {
+  width: 100%;
+  height: 22px;
+  background-color: #e5e7eb;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.progress-bar-fill {
+  height: 100%;
+  width: 0%;
+  background-color: #2563eb;
+  border-radius: 12px;
+  transition: width 0.3s ease, background-color 0.3s ease;
+}
+
+.progress-bar-fill.complete {
+  background-color: #10b981;
+}
+
+.add-task {
+  display: flex;
+  gap: 0.5rem;
+  margin: 1.5rem 0;
+}
+
+.add-task input {
+  flex: 1;
+}
+
+.checklist-item {
+  display: grid;
+  grid-template-columns: 32px 1fr;
+  column-gap: 12px;
+  align-items: start;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.checklist-item:last-child {
+  border-bottom: none;
+}
+
+.checklist-checkbox {
+  width: 18px;
+  height: 18px;
+}
+
+.checklist-text {
+  color: #1f2937;
+}
+
+.checklist-item.completed .checklist-text {
+  text-decoration: line-through;
+  color: #94a3b8;
+}
+
+.actions {
+  margin-top: 1.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid #e5e7eb;
+  text-align: right;
+}
+.button-danger {
+  background-color: #dc2626;
+}
+
+/* Animation confettis */
+.confetti {
+  position: fixed;
+  width: 12px;
+  height: 12px;
+  top: -12px;
+  z-index: 1000;
+  pointer-events: none;
+  border-radius: 2px;
+}
+
+@keyframes confetti-fall {
+  0% {
+    transform: translateY(0) translateX(0) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100vh) translateX(var(--drift)) rotate(720deg);
+    opacity: 0;
+  }
+}

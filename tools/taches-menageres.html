@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tâches Ménagères - Organise-Moi</title>
+    <meta name="description" content="Organisez les tâches ménagères entre les membres de votre foyer. Répartissez les tâches et suivez leur réalisation.">
+    <link rel="icon" type="image/svg+xml" href="../img/favicon.svg">
+    <link rel="icon" type="image/png" sizes="96x96" href="../img/favicon-96x96.png">
+    <link rel="icon" type="image/x-icon" href="../img/favicon.ico">
+    <link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
+    <link rel="manifest" href="../site.webmanifest">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/taches.css">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <a href="../index.html" class="logo-container">
+                <img src="../img/favicon.svg" alt="Organise-Moi" class="logo-icon" width="24" height="24">
+                <span class="logo">Organise-Moi</span>
+            </a>
+            <a href="../index.html" class="back-link">← Retour à l'accueil</a>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="page-title">
+            <h1 data-aos="fade-up">Tâches Ménagères</h1>
+            <p class="page-subtitle" data-aos="fade-up" data-aos-delay="100">Organise-Moi</p>
+        </div>
+
+        <div class="card">
+            <div class="taches-container">
+                <div class="input-group">
+                    <input type="text" id="taskInput" placeholder="Nom de la tâche..." />
+                    <div class="select-wrapper">
+                        <input type="text" id="personInput" list="peopleList" placeholder="Personne responsable..." autocomplete="off" />
+                        <datalist id="peopleList"></datalist>
+                    </div>
+                    <select id="frequencyInput" class="frequency-select">
+                        <option value="once">Ponctuel</option>
+                        <option value="daily">Quotidien</option>
+                        <option value="weekly" selected>Hebdomadaire</option>
+                        <option value="monthly">Mensuel</option>
+                    </select>
+                    <button class="button" id="addButton">Ajouter</button>
+                </div>
+
+                <div class="taches-list">
+                    <ul id="tachesList"></ul>
+                    <div id="emptyState" class="empty-state" style="display: none;">
+                        <div class="empty-icon">✓</div>
+                        <p class="empty-title">Tout est fait !</p>
+                        <p class="empty-message">Ajoutez une tâche pour commencer.</p>
+                    </div>
+                </div>
+
+                <div class="footer-actions">
+                    <div class="filters">
+                        <button class="filter-btn active" data-filter="all">Toutes</button>
+                        <button class="filter-btn" data-filter="active">À faire</button>
+                        <button class="filter-btn" data-filter="completed">Terminées</button>
+                    </div>
+                    <div class="filters-secondary">
+                        <select id="personFilter" class="person-filter">
+                            <option value="all">Toutes les personnes</option>
+                        </select>
+                    </div>
+                    <div class="footer-buttons">
+                        <button class="button-clear" id="resetWeekButton">Réinitialiser la semaine</button>
+                        <button class="button-clear" id="clearCompletedButton">Effacer les terminées</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <a href="#privacy">Politique de confidentialité</a>
+            <a href="#terms">Conditions d'utilisation</a>
+        </div>
+        <p class="copyright">© 2025 Organise-Moi. Tous droits réservés.</p>
+    </footer>
+
+    <script src="../js/footer-year.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src="../js/taches.js"></script>
+    <script>
+        if (window.innerWidth >= 768) {
+            AOS.init({
+                duration: 800,
+                easing: 'ease-in-out',
+                once: true,
+                offset: 50
+            });
+        } else {
+            AOS.init({
+                disable: true
+            });
+        }
+    </script>
+</body>
+</html>
+
