@@ -5,6 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Organise-Moi - Vos outils d'organisation au quotidien</title>
     <meta name="description" content="Organisez votre quotidien avec nos outils pratiques : to-do list, planning de la semaine, liste de courses, tâches ménagères et checklists.">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://www.organise-moi.fr/">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.organise-moi.fr/">
+    <meta property="og:title" content="Organise-Moi - Vos outils d'organisation au quotidien">
+    <meta property="og:description" content="Organisez votre quotidien avec nos outils pratiques : to-do list, planning de la semaine, liste de courses, tâches ménagères et checklists.">
+    <meta property="og:image" content="https://www.organise-moi.fr/img/organise-moi.webp">
+    <meta property="og:locale" content="fr_FR">
+    <meta property="og:site_name" content="Organise-Moi">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://www.organise-moi.fr/">
+    <meta name="twitter:title" content="Organise-Moi - Vos outils d'organisation au quotidien">
+    <meta name="twitter:description" content="Organisez votre quotidien avec nos outils pratiques : to-do list, planning de la semaine, liste de courses, tâches ménagères et checklists.">
+    <meta name="twitter:image" content="https://www.organise-moi.fr/img/organise-moi.webp">
+    
     <link rel="icon" type="image/svg+xml" href="img/favicon.svg">
     <link rel="icon" type="image/png" sizes="96x96" href="img/favicon-96x96.png">
     <link rel="icon" type="image/x-icon" href="img/favicon.ico">
@@ -89,8 +109,8 @@
 
     <footer>
         <div class="footer-content">
-            <a href="#privacy">Politique de confidentialité</a>
-            <a href="#terms">Conditions d'utilisation</a>
+            <a href="politique-confidentialite.html">Politique de confidentialité</a>
+            <a href="conditions-utilisation.html">Conditions d'utilisation</a>
         </div>
         <p class="copyright">© 2025 Organise-Moi. Tous droits réservés.</p>
     </footer>
@@ -110,6 +130,32 @@
                 disable: true
             });
         }
+    </script>
+    
+    <!-- Données structurées JSON-LD -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "Organise-Moi",
+      "url": "https://www.organise-moi.fr/",
+      "description": "Organisez votre quotidien avec nos outils pratiques : to-do list, planning de la semaine, liste de courses, tâches ménagères et checklists.",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://www.organise-moi.fr/?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Organise-Moi",
+      "url": "https://www.organise-moi.fr/",
+      "logo": "https://www.organise-moi.fr/img/organise-moi.webp",
+      "description": "Outils simples et gratuits pour mieux organiser votre quotidien"
+    }
     </script>
 </body>
 </html>
