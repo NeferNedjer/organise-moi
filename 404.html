@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page non trouvée - Organise-Moi</title>
+    <meta name="description" content="La page que vous recherchez n'existe pas ou a été déplacée.">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://www.organise-moi.fr/404.html">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.organise-moi.fr/404.html">
+    <meta property="og:title" content="Page non trouvée - Organise-Moi">
+    <meta property="og:description" content="La page que vous recherchez n'existe pas ou a été déplacée.">
+    <meta property="og:image" content="https://www.organise-moi.fr/img/organise-moi.webp">
+    <meta property="og:locale" content="fr_FR">
+    <meta property="og:site_name" content="Organise-Moi">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://www.organise-moi.fr/404.html">
+    <meta name="twitter:title" content="Page non trouvée - Organise-Moi">
+    <meta name="twitter:description" content="La page que vous recherchez n'existe pas ou a été déplacée.">
+    <meta name="twitter:image" content="https://www.organise-moi.fr/img/organise-moi.webp">
+    
+    <link rel="icon" type="image/svg+xml" href="img/favicon.svg">
+    <link rel="icon" type="image/png" sizes="96x96" href="img/favicon-96x96.png">
+    <link rel="icon" type="image/x-icon" href="img/favicon.ico">
+    <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+    <link rel="manifest" href="site.webmanifest">
+    <link rel="stylesheet" href="css/common.css">
+    <style>
+        .error-404 {
+            min-height: 80vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 2rem;
+            color: #ffffff;
+        }
+
+        .error-404__code {
+            font-size: 8rem;
+            font-weight: 700;
+            line-height: 1;
+            margin: 0 0 1rem 0;
+            color: #ffffff;
+            opacity: 0.9;
+        }
+
+        .error-404__title {
+            font-size: 2rem;
+            font-weight: 700;
+            margin: 0 0 1rem 0;
+            color: #ffffff;
+        }
+
+        .error-404__message {
+            font-size: 1.125rem;
+            margin: 0 0 2rem 0;
+            color: rgba(255, 255, 255, 0.9);
+            max-width: 600px;
+        }
+
+        .error-404__actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            justify-content: center;
+            margin-top: 2rem;
+        }
+
+        .error-404__button {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            border-radius: 999px;
+            border: 2px solid #ffffff;
+            background-color: transparent;
+            color: #ffffff;
+            font-weight: 600;
+            text-decoration: none;
+            font-size: 1rem;
+            transition: all 0.2s ease;
+        }
+
+        .error-404__button:hover {
+            background-color: #ffffff;
+            color: #0065FF;
+            transform: translateY(-2px);
+        }
+
+        .error-404__button--primary {
+            background-color: #ffffff;
+            color: #0065FF;
+        }
+
+        .error-404__button--primary:hover {
+            background-color: rgba(255, 255, 255, 0.9);
+        }
+
+        @media (max-width: 768px) {
+            .error-404__code {
+                font-size: 5rem;
+            }
+
+            .error-404__title {
+                font-size: 1.5rem;
+            }
+
+            .error-404__message {
+                font-size: 1rem;
+            }
+
+            .error-404__actions {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .error-404__button {
+                width: 100%;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <a href="index.html" class="logo-container">
+                <img src="img/favicon.svg" alt="Organise-Moi" class="logo-icon" width="24" height="24">
+                <span class="logo">Organise-Moi</span>
+            </a>
+        </div>
+    </header>
+
+    <main>
+        <div class="error-404">
+            <h1 class="error-404__code">404</h1>
+            <h2 class="error-404__title">Page non trouvée</h2>
+            <p class="error-404__message">
+                Désolé, la page que vous recherchez n'existe pas ou a été déplacée. 
+                Vous pouvez retourner à l'accueil ou découvrir nos outils d'organisation.
+            </p>
+            <div class="error-404__actions">
+                <a href="index.html" class="error-404__button error-404__button--primary">Retour à l'accueil</a>
+                <a href="a-propos.html" class="error-404__button">À propos</a>
+            </div>
+        </div>
+
+        <!-- Section de maillage interne -->
+        <section class="internal-links" aria-label="Autres outils d'organisation">
+            <h2 class="internal-links__title">Découvrez nos outils</h2>
+            <ul class="internal-links__list">
+                <li class="internal-links__item">
+                    <a class="internal-links__link" href="tools/planning-semaine.html">Planning de la semaine</a>
+                    <span class="internal-links__desc">Visualisez et planifiez votre semaine simplement.</span>
+                </li>
+                <li class="internal-links__item">
+                    <a class="internal-links__link" href="tools/liste-courses.html">Liste de courses</a>
+                    <span class="internal-links__desc">Préparez vos courses rapidement et efficacement.</span>
+                </li>
+                <li class="internal-links__item">
+                    <a class="internal-links__link" href="tools/todo.html">To-do list</a>
+                    <span class="internal-links__desc">Notez et suivez vos tâches quotidiennes.</span>
+                </li>
+                <li class="internal-links__item">
+                    <a class="internal-links__link" href="tools/taches-menageres.html">Tâches ménagères</a>
+                    <span class="internal-links__desc">Répartissez les tâches dans le foyer simplement.</span>
+                </li>
+                <li class="internal-links__item">
+                    <a class="internal-links__link" href="tools/checklist-rentree.html">Checklist rentrée</a>
+                    <span class="internal-links__desc">Préparez la rentrée scolaire en toute sérénité.</span>
+                </li>
+                <li class="internal-links__item">
+                    <a class="internal-links__link" href="tools/checklist-demenagement.html">Checklist déménagement</a>
+                    <span class="internal-links__desc">Organisez votre déménagement étape par étape.</span>
+                </li>
+                <li class="internal-links__item">
+                    <a class="internal-links__link" href="tools/checklist-vacances.html">Checklist vacances</a>
+                    <span class="internal-links__desc">Préparez vos vacances sans rien oublier.</span>
+                </li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <a href="politique-confidentialite.html">Politique de confidentialité</a>
+            <a href="conditions-utilisation.html">Conditions d'utilisation</a>
+        </div>
+        <p class="copyright">© 2025 Organise-Moi. Tous droits réservés.</p>
+    </footer>
+
+    <script src="js/footer-year.js"></script>
+</body>
+</html>
+
