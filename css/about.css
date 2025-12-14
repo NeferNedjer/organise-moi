@@ -50,7 +50,7 @@
 }
 
 .features-list li::before {
-  content: '✓';
+  content: "✓";
   position: absolute;
   left: 0;
   color: #2563eb;
@@ -61,6 +61,32 @@
 .features-list li strong {
   color: #1f2937;
   font-weight: 600;
+}
+
+.features-list li a {
+  color: #2563eb;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.2s ease;
+}
+
+.features-list li a:hover {
+  color: #1d4ed8;
+  text-decoration: none;
+}
+
+/* Styles spécifiques pour les backlinks - sans puces */
+.card .about-content .features-list li::before {
+  display: none !important;
+}
+
+.card .about-content .features-list li {
+  padding-left: 0 !important;
+  list-style: none;
+}
+
+.features-list li a strong {
+  color: #2563eb;
 }
 
 @media (max-width: 768px) {
@@ -77,4 +103,3 @@
     font-size: 0.95rem;
   }
 }
-

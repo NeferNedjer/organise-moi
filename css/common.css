@@ -341,3 +341,68 @@ footer {
   }
 }
 
+/* Section de maillage interne (backlinks) */
+.internal-links {
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+}
+
+.internal-links__title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #ffffff;
+  margin-bottom: 0.75rem;
+}
+
+.internal-links__list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.internal-links__item {
+  margin-bottom: 0.6rem;
+  font-size: 0.95rem;
+}
+
+.internal-links__link {
+  color: #ffffff;
+  font-weight: 600;
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+}
+
+.internal-links__link:hover {
+  opacity: 0.8;
+  text-decoration: underline;
+}
+
+.internal-links__link[aria-current="page"] {
+  opacity: 0.6;
+  cursor: default;
+  pointer-events: none;
+}
+
+.internal-links__desc {
+  margin-left: 0.35rem;
+  color: rgba(255, 255, 255, 0.8);
+  font-weight: normal;
+}
+
+@media (max-width: 768px) {
+  .internal-links {
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+  }
+
+  .internal-links__title {
+    font-size: 1rem;
+  }
+
+  .internal-links__item {
+    font-size: 0.9rem;
+  }
+}
+
