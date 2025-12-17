@@ -36,6 +36,16 @@
   min-height: 80px;
 }
 
+.create-actions {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+}
+
+.create-actions .button {
+  flex: 1;
+}
+
 /* ============================================
    EN-TÊTE DE L'ÉVÉNEMENT
    ============================================ */
@@ -409,6 +419,14 @@
    ============================================ */
 
 @media (max-width: 768px) {
+  .create-actions {
+    flex-direction: column;
+  }
+
+  .create-actions .button {
+    width: 100%;
+  }
+
   .event-header {
     margin-bottom: 1.5rem;
   }

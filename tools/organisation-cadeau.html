@@ -67,7 +67,11 @@
                     <label for="eventDescription">Description (optionnel)</label>
                     <textarea id="eventDescription" rows="3" placeholder="Informations complémentaires..."></textarea>
                 </div>
-                <button type="submit" class="button">Créer l'événement</button>
+                <div class="create-actions">
+                    <button type="submit" class="button">Créer l'événement</button>
+                    <button type="button" class="button" id="importButtonCreate">Importer JSON</button>
+                </div>
+                <input type="file" id="importFileInputCreate" accept=".json" style="display: none;" />
             </form>
         </div>
 

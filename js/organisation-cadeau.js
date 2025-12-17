@@ -14,7 +14,9 @@ const eventDateDisplay = document.getElementById('eventDateDisplay');
 const eventDescriptionDisplay = document.getElementById('eventDescriptionDisplay');
 const exportButton = document.getElementById('exportButton');
 const importButton = document.getElementById('importButton');
+const importButtonCreate = document.getElementById('importButtonCreate');
 const importFileInput = document.getElementById('importFileInput');
+const importFileInputCreate = document.getElementById('importFileInputCreate');
 const participantInput = document.getElementById('participantInput');
 const addParticipantButton = document.getElementById('addParticipantButton');
 const participantsList = document.getElementById('participantsList');
@@ -418,6 +420,10 @@ function importEvent() {
     importFileInput.click();
 }
 
+function importEventCreate() {
+    importFileInputCreate.click();
+}
+
 function handleFileImport(event) {
     const file = event.target.files[0];
     if (!file) return;
@@ -433,8 +439,14 @@ function handleFileImport(event) {
                 return;
             }
             
+            // Adapter le message selon le contexte
+            const isCreating = !currentEvent;
+            const confirmMessage = isCreating 
+                ? `Importer l'événement "${importedEvent.title}" ?`
+                : `Importer l'événement "${importedEvent.title}" ? Cela remplacera l'événement actuel.`;
+            
             // Demander confirmation
-            if (!confirm(`Importer l'événement "${importedEvent.title}" ? Cela remplacera l'événement actuel.`)) {
+            if (!confirm(confirmMessage)) {
                 return;
             }
             
@@ -493,7 +505,13 @@ ideaTitleInput.addEventListener('keypress', (e) => {
 
 exportButton.addEventListener('click', exportEvent);
 importButton.addEventListener('click', importEvent);
+if (importButtonCreate) {
+    importButtonCreate.addEventListener('click', importEventCreate);
+}
 importFileInput.addEventListener('change', handleFileImport);
+if (importFileInputCreate) {
+    importFileInputCreate.addEventListener('change', handleFileImport);
+}
 
 // Gérer les changements d'URL (retour en arrière)
 window.addEventListener('popstate', () => {
