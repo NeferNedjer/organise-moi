@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Organisation de cadeau collectif - Organise-Moi</title>
+    <meta name="description" content="Organisez un cadeau collectif en groupe : anniversaire, Noël, naissance, pot de départ. Partagez le lien et évitez les doublons.">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://www.organise-moi.fr/tools/organisation-cadeau.html">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.organise-moi.fr/tools/organisation-cadeau.html">
+    <meta property="og:title" content="Organisation de cadeau collectif - Organise-Moi">
+    <meta property="og:description" content="Organisez un cadeau collectif en groupe : anniversaire, Noël, naissance, pot de départ. Partagez le lien et évitez les doublons.">
+    <meta property="og:image" content="https://www.organise-moi.fr/img/organise-moi.webp">
+    <meta property="og:locale" content="fr_FR">
+    <meta property="og:site_name" content="Organise-Moi">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://www.organise-moi.fr/tools/organisation-cadeau.html">
+    <meta name="twitter:title" content="Organisation de cadeau collectif - Organise-Moi">
+    <meta name="twitter:description" content="Organisez un cadeau collectif en groupe : anniversaire, Noël, naissance, pot de départ. Partagez le lien et évitez les doublons.">
+    <meta name="twitter:image" content="https://www.organise-moi.fr/img/organise-moi.webp">
+    
+    <link rel="icon" type="image/svg+xml" href="../img/favicon.svg">
+    <link rel="icon" type="image/png" sizes="96x96" href="../img/favicon-96x96.png">
+    <link rel="icon" type="image/x-icon" href="../img/favicon.ico">
+    <link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
+    <link rel="manifest" href="../site.webmanifest">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/organisation-cadeau.css">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <a href="../index.html" class="logo-container">
+                <img src="../img/favicon.svg" alt="Organise-Moi" class="logo-icon" width="24" height="24">
+                <span class="logo">Organise-Moi</span>
+            </a>
+            <a href="../index.html" class="back-link">← Retour à l'accueil</a>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="page-title">
+            <h1 data-aos="fade-up">Organisation de cadeau collectif</h1>
+            <p class="page-subtitle" data-aos="fade-up" data-aos-delay="100">Organisez un cadeau en groupe sans doublons</p>
+        </div>
+
+        <!-- Écran de création d'événement -->
+        <div id="createEventScreen" class="card">
+            <h2>Créer un nouvel événement</h2>
+            <form id="createEventForm">
+                <div class="form-group">
+                    <label for="eventTitle">Titre de l'événement *</label>
+                    <input type="text" id="eventTitle" placeholder="Ex: Anniversaire de Paul" required />
+                </div>
+                <div class="form-group">
+                    <label for="eventDate">Date (optionnel)</label>
+                    <input type="date" id="eventDate" />
+                </div>
+                <div class="form-group">
+                    <label for="eventDescription">Description (optionnel)</label>
+                    <textarea id="eventDescription" rows="3" placeholder="Informations complémentaires..."></textarea>
+                </div>
+                <button type="submit" class="button">Créer l'événement</button>
+            </form>
+        </div>
+
+        <!-- Écran principal de l'événement -->
+        <div id="eventScreen" class="card" style="display: none;">
+            <!-- En-tête de l'événement -->
+            <div class="event-header">
+                <div class="event-info">
+                    <h2 id="eventTitleDisplay"></h2>
+                    <div class="event-meta">
+                        <span id="eventDateDisplay" class="event-date"></span>
+                        <span id="eventDescriptionDisplay" class="event-description"></span>
+                    </div>
+                </div>
+                <div class="event-actions">
+                    <button id="exportButton" class="button">Exporter JSON</button>
+                    <button id="importButton" class="button">Importer JSON</button>
+                    <input type="file" id="importFileInput" accept=".json" style="display: none;" />
+                </div>
+            </div>
+
+            <div class="info-box" role="note" aria-label="Information partage et import export">
+                <h3 class="info-box__title">Partager cet événement</h3>
+                <p class="info-box__text">
+                    Cet outil fonctionne sans compte et sans serveur : les données sont enregistrées sur l'appareil qui crée l'événement.
+                </p>
+                <p class="info-box__text">
+                    Pour partager avec d'autres personnes :
+                </p>
+                <ol class="info-box__list">
+                    <li>Cliquez sur <strong>Exporter JSON</strong></li>
+                    <li>Envoyez le fichier (mail, messagerie)</li>
+                    <li>Les autres participants cliquent sur <strong>Importer JSON</strong></li>
+                </ol>
+            </div>
+
+            <!-- Participants -->
+            <section class="section">
+                <h3>Participants</h3>
+                <div class="input-group">
+                    <input type="text" id="participantInput" placeholder="Prénom du participant" />
+                    <button type="button" class="button" id="addParticipantButton">Ajouter</button>
+                </div>
+                <ul id="participantsList" class="list"></ul>
+            </section>
+
+            <!-- Idées de cadeaux -->
+            <section class="section">
+                <h3>Idées de cadeaux</h3>
+                <div class="idea-form">
+                    <div class="form-row">
+                        <input type="text" id="ideaTitleInput" placeholder="Nom du cadeau" class="idea-title-input" />
+                        <input type="number" id="ideaPriceInput" placeholder="Prix (€)" class="idea-price-input" min="0" step="0.01" />
+                    </div>
+                    <textarea id="ideaCommentInput" placeholder="Commentaire (optionnel)" rows="2"></textarea>
+                    <button type="button" class="button" id="addIdeaButton">Ajouter une idée</button>
+                </div>
+                <ul id="ideasList" class="list ideas-list"></ul>
+            </section>
+        </div>
+
+        <!-- Section de maillage interne -->
+        <section class="internal-links" aria-label="Autres outils d'organisation">
+            <h2 class="internal-links__title">Découvrez aussi</h2>
+            <ul class="internal-links__list">
+                <li class="internal-links__item">
+                    <a class="internal-links__link" href="../tools/planning-semaine.html">Planning de la semaine</a>
+                    <span class="internal-links__desc">Visualisez et planifiez votre semaine simplement.</span>
+                </li>
+                <li class="internal-links__item">
+                    <a class="internal-links__link" href="../tools/liste-courses.html">Liste de courses</a>
+                    <span class="internal-links__desc">Préparez vos courses rapidement et efficacement.</span>
+                </li>
+                <li class="internal-links__item">
+                    <a class="internal-links__link" href="../tools/todo.html">To-do list</a>
+                    <span class="internal-links__desc">Notez et suivez vos tâches quotidiennes.</span>
+                </li>
+                <li class="internal-links__item">
+                    <a class="internal-links__link" href="../tools/taches-menageres.html">Tâches ménagères</a>
+                    <span class="internal-links__desc">Répartissez les tâches dans le foyer simplement.</span>
+                </li>
+                <li class="internal-links__item">
+                    <a class="internal-links__link" href="../tools/checklist-rentree.html">Checklist rentrée</a>
+                    <span class="internal-links__desc">Préparez la rentrée scolaire en toute sérénité.</span>
+                </li>
+                <li class="internal-links__item">
+                    <a class="internal-links__link" href="../tools/checklist-demenagement.html">Checklist déménagement</a>
+                    <span class="internal-links__desc">Organisez votre déménagement étape par étape.</span>
+                </li>
+                <li class="internal-links__item">
+                    <a class="internal-links__link" href="../tools/checklist-vacances.html">Checklist vacances</a>
+                    <span class="internal-links__desc">Préparez vos vacances sans rien oublier.</span>
+                </li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <a href="../politique-confidentialite.html">Politique de confidentialité</a>
+            <a href="../conditions-utilisation.html">Conditions d'utilisation</a>
+        </div>
+        <p class="copyright">© 2025 Organise-Moi. Tous droits réservés.</p>
+    </footer>
+
+    <script src="../js/footer-year.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src="../js/organisation-cadeau.js"></script>
+    <script>
+        if (window.innerWidth >= 768) {
+            AOS.init({
+                duration: 800,
+                easing: 'ease-in-out',
+                once: true,
+                offset: 50
+            });
+        } else {
+            AOS.init({
+                disable: true
+            });
+        }
+    </script>
+</body>
+</html>
